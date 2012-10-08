@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+	<head>	
+		<link rel="stylesheet" href="site.css" />
+		<script id="studentView-template" type="text/template">
+			<legend>Read Only</legend>
+			<div>First Name: {{FirstName}}</div>
+			<div>Last Name: {{LastName}}</div>
+			<span class="editImmediate sprite prefix edit">Edit</span>
+		</script>
+		<script id="studentEdit-template" type="text/template">
+			<legend>Edit</legend>
+			<div>First Name: 
+				<input id="{{Id}}-FirstName" name="FirstName" type="text" value="{{FirstName}}" /> 
+			</div>
+			<div>Last Name: 
+				<input id="{{Id}}-LastName" name="LastName" type="text" value="{{LastName}}" /> 
+			</div>
+			{{#if UndoSave}}
+				<span class="sprite prefix undo">Undo</span>
+				<span class="sprite prefix save">Save</span>				
+			{{/if}}
+			<span class="closeImmediate sprite prefix delete">Close</span>
+		</script>		
+		<script id="person-template" type="text/template">
+			<span>{{FirstName}} {{LastName}}</span>
+			{{#if Enrolled}}
+				<span data-id="{{Id}}" class="sprite delete icon">delete</span>
+			{{else}}
+				<span data-id="{{Id}}" class="sprite add icon">add</span>
+			{{/if}}
+		</script>		
+		<script id="count-template" type="text/template">
+			{{Count}} students {{#unless Enrolled}}un{{/unless}}enrolled.
+		</script>
+	</head>
+	<body>
+		<div>
+			<div class="demo" id="immediate">
+			</div>
+			<div class="demo" id="commit">			
+			</div>
+			<div class="demo" id="enrollDiv">				
+				<div id="unenrolled" class="left-col">
+					<h2>Unenrolled</h2>
+					<ul id="unenrolledList"></ul>
+					<div id="unenrolledCount"></div>
+				</div>
+				<div id="enrolled" class="right-col">
+					<h2>Enrolled</h2>
+					<ul id="enrolledList"></ul>
+					<div id="enrolledCount"></div>					
+				</div>
+			</div>
+		</div>
+	</body>
+	<div>
+		<script type="text/javascript" src="lib/jquery.min.js"></script>		
+		<script type="text/javascript" src="lib/underscore-min.js"></script>
+		<script type="text/javascript" src="lib/backbone-min.js"></script>
+		<script type="text/javascript" src="lib/handlebars.min.js"></script>
+		<script type="text/javascript" src="lib/require.min.js"></script>
+		<!--<script type="text/javascript" src="main.js"></script>-->
+		<script type="text/javascript">
+		require.config({
+			baseUrl: '',
+			//urlArgs: "v=@Html.CorIpVersion()", // prevent caching
+			paths: {
+				/* Libraries */
+				'compile': 'lib/tmpl'
+			}
+		});
+		
+		require(["main"]);
+		</script>
+	</div>
+</html>

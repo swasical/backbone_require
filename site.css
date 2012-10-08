@@ -1,0 +1,56 @@
+.hidden
+{
+	display: none;
+}
+
+.demo
+{
+	padding: 3%;
+	border: 1px #C6C6C6 solid;
+	width: 80%;
+	display: inline-block;
+}
+
+.left-col
+{
+	float:left;
+	margin-right:15%;
+}
+
+.right-col
+{
+	float: left;
+}
+
+.sprite {
+	background: url('ico-sprite-16-v2.png') no-repeat top left;
+}
+.sprite.icon {
+height: 16px;
+width: 16px;
+overflow: hidden;
+display: inline-block;
+text-indent: 100px;
+cursor: hand;
+cursor: pointer;
+}
+.sprite.prefix {
+padding: 1px 0 2px 20px;
+height: inherit;
+display: inline-block;
+}
+.add {
+background-position: -1510px -26px;
+}
+.delete {
+background-position: -1274px -263px;
+}
+.edit {
+background-position: -1196px -341px;
+}
+.undo {
+background-position: -130px -1406px;
+}
+.save {
+background-position: -338px -1198px;
+}
