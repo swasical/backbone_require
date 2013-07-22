@@ -18,7 +18,7 @@ define(['views/AllImmediateView', 'views/StudentListView'], function(AllImmediat
 			
 			// enrollment control
 			var studentNames;
-			studentNames = this.getStudents(4000);	
+			studentNames = this.getStudents(20);	
 			var studentsView = new StudentListView({
 				el: '#enrollDiv',
 				students: studentNames

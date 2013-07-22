@@ -3,9 +3,7 @@ require.config({
 	//urlArgs: "v=@Html.CorIpVersion()", // prevent caching
 	paths: {
 		/* Libraries */
-		'compile': 'lib/tmpl',
-		'views': 'js/views',
-		'models': 'js/models'
+		'compile': 'lib/tmpl'
 	}
 });
 

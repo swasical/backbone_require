@@ -60,18 +60,12 @@
 		<script type="text/javascript" src="lib/backbone-min.js"></script>
 		<script type="text/javascript" src="lib/handlebars.min.js"></script>
 		<script type="text/javascript" src="lib/require.min.js"></script>
-		<!--<script type="text/javascript" src="main.js"></script>-->
+		<script type="text/javascript" data-main="main.js">
+
+		</script>		
 		<script type="text/javascript">
-		require.config({
-			baseUrl: '',
-			//urlArgs: "v=@Html.CorIpVersion()", // prevent caching
-			paths: {
-				/* Libraries */
-				'compile': 'lib/tmpl'
-			}
-		});
-		
-		require(["main"]);
+			require(['main']);
 		</script>
+		
 	</div>
 </html>
